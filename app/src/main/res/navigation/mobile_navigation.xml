@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.a10119918uts.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_daily_activity"
+        android:name="com.example.a10119918uts.ui.dailyactivity.DailyActivityFragment"
+        android:label="@string/menu_daily_activity"
+        tools:layout="@layout/fragment_daily_activity" />
+
+    <fragment
+        android:id="@+id/nav_friend_list"
+        android:name="com.example.a10119918uts.ui.friendlist.FriendListFragment"
+        android:label="@string/menu_friend_list"
+        tools:layout="@layout/fragment_friend_list" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.a10119918uts.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_music_video"
+        android:name="com.example.a10119918uts.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_music_video"
+        tools:layout="@layout/fragment_music_video" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.a10119918uts.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
