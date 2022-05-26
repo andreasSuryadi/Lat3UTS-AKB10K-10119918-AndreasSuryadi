@@ -7,10 +7,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a10119918uts.databinding.FragmentGalleryBinding;
+import com.example.a10119918uts.model.GalleryModel;
+import com.example.a10119918uts.presenter.GalleryPresenter;
+import com.example.a10119918uts.presenter.GalleryPresenterImpl;
+import com.example.a10119918uts.view.GalleryView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,21 +30,43 @@ import com.example.a10119918uts.databinding.FragmentGalleryBinding;
  *
  */
 
-public class GalleryFragment extends Fragment {
+public class GalleryFragment extends Fragment implements GalleryView {
 
     private FragmentGalleryBinding binding;
+    private RecyclerView recyclerView;
+    private GalleryAdapter adapter;
+    private List<GalleryModel> galleries = new ArrayList<>();
+    private AppCompatDialog dialog;
+    private GalleryPresenter presenter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-//        final TextView textView = binding.textGallery;
-//        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        initRecycle();
+
+        presenter = new GalleryPresenterImpl(this);
+
+        presenter.load();
+
         return root;
+    }
+
+    private void initRecycle() {
+        RecyclerView recyclerView = binding.galleryRecyclerView;
+        recyclerView.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(), 2));
+
+        adapter = new GalleryAdapter(galleries, binding.getRoot().getContext());
+        recyclerView.setAdapter((adapter));
+    }
+
+    @Override
+    public void onLoad(List<GalleryModel> galleryModels) {
+        galleries.clear();
+        galleries.addAll(galleryModels);
+
+        adapter.notifyDataSetChanged();
     }
 
     @Override
