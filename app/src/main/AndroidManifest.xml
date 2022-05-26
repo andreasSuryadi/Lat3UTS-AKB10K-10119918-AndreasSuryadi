@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.a10119918uts">
 
     <application
@@ -16,16 +17,36 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
-            android:name=".MainActivity"
+            android:name=".RoutingActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.10119918UTS.NoActionBar">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.10119918UTS">
+        </activity>
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" />
+        <activity android:name="PageOneFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name="PageTwoFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name="PageThreeFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".SlideScreenPagerActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

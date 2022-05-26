@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Profile</string>
+    <string name="app_name">Myself App</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Andreas Suryadi</string>
@@ -30,8 +30,16 @@
 
     <string name="daily_activity">Daily Activity</string>
     <string name="friend_list">Friend List</string>
-
     <string name="gallery">Gallery</string>
+    <string name="music_video">Music &amp; Video</string>
 
     <string name="version">Version: 1.0.0</string>
+
+    <string name="page_one">Selamat Datang</string>
+    <string name="page_one_description">Aplikasi ini dibuat untuk perkenalan diri</string>
+    <string name="page_two">Kegiatan Sehari-hari</string>
+    <string name="page_two_description">Berisi Tentang Kegiatan Sehari-hari</string>
+    <string name="page_three">Mari Mulai</string>
+    <string name="next">Lanjut</string>
+    <string name="comingsoon">Coming Soon</string>
 </resources>
